@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Habit Rabbit</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="habit_prompt">Choose a habit</string>
+
+    <string-array name="habit_arrays">
+        <item>Alcoholic</item>
+        <item>Smoking</item>
+        <item>Sleep Time</item>
+        <item>Punctuality</item>
+        <item>Exercise</item>
+        <item>Diet</item>
+        <item>Custom</item>
+    </string-array>
 </resources>
