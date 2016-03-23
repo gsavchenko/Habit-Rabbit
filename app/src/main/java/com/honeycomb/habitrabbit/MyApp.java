@@ -7,5 +7,6 @@ import android.app.Application;
  */
 public class MyApp extends Application {
     public MainController _mController = new MainController(new dbConnection(this));
+    public c_Habit currentHabit;
 }
 
