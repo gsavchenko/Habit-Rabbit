@@ -1,6 +1,8 @@
 package com.honeycomb.habitrabbit;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -46,15 +48,41 @@ public class Home_r2 extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info;
+        int index;
         switch (item.getItemId()) {
-            case R.id.Delete_Context:
-                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-                int index = info.position;
+            case R.id.View_Context:
+                info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+                index = info.position;
                 ViewDetailsForHabit(index);
                 return true;
+            case R.id.Delete_Context:
+                info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+                index = info.position;
+                DeleteHabitFromStorage(habits.get(index));
             default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    private void DeleteHabitFromStorage(c_Habit h) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirm");
+        builder.setMessage("Are you sure you want to delete this habit?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                appData._mController.dbsrv.DeleteHabit(h);
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     public void ViewDetailsForHabit(int index) {

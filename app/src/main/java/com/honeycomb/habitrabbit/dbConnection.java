@@ -58,6 +58,20 @@ public class dbConnection extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public boolean DeleteHabit(c_Habit h) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int removed = 0;
+        try {
+            removed += db.delete(TABLE_HABITS,KEY_HABIT_NAME + " = ?", new String[]{h.name});
+            removed += db.delete(TABLE_METRICS,KEY_HABIT_NAME + " = ?", new String[]{h.name});
+        } catch (Exception ex) {
+
+        } finally {
+            db.close();
+        }
+        return (removed > 0);
+    }
+
     public boolean AddHabit(c_Habit h) {
         int ret = 0; //aka. failed
         SQLiteDatabase db = this.getWritableDatabase();

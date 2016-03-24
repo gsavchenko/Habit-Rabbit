@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/Delete_Context"
+        android:id="@+id/View_Context"
         android:title="View Details" />
+    <item
+        android:id="@+id/Delete_Context"
+        android:title="Delete Habit" />
 </menu>
