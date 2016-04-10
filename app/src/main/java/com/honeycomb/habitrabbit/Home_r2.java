@@ -29,13 +29,17 @@ public class Home_r2 extends AppCompatActivity {
         appData = (MyApp)this.getApplicationContext();
 
         habits = new ArrayList<>();
+
+        showList();
+    }
+
+    private void showList() {
         habits = appData._mController.dbsrv.GetAllHabits();
 
         lsvHabits = (ListView)findViewById(R.id.lsvHabits); // grab listview object from view
         registerForContextMenu(lsvHabits);
 
-        ArrayAdapter lv_adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, habits);
-        lsvHabits.setAdapter(lv_adapter);
+        lsvHabits.setAdapter(new CustomListAdapter(this, habits));
     }
 
     @Override
@@ -66,12 +70,14 @@ public class Home_r2 extends AppCompatActivity {
     }
 
     private void DeleteHabitFromStorage(c_Habit h) {
+        final c_Habit habitToDelete = h;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirm");
         builder.setMessage("Are you sure you want to delete this habit?");
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                appData._mController.dbsrv.DeleteHabit(h);
+                appData._mController.dbsrv.DeleteHabit(habitToDelete);
+                showList();
                 dialog.dismiss();
             }
         });

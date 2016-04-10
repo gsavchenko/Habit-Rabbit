@@ -33,6 +33,16 @@ public class Details_r2 extends AppCompatActivity {
         h = appData.currentHabit;
         TextView tvDesc = (TextView)findViewById(R.id.tvDesc);
         tvDesc.setText(h.desc);
+
+        np = (NumberPicker)findViewById(R.id.np);
+        np.setMinValue(0);
+        np.setMaxValue(100);
+        np.setWrapSelectorWheel(false);
+
+        GetAndShowData();
+    }
+
+    private void GetAndShowData() {
         List<Integer> metrics = appData._mController.dbsrv.GetMetrics(h.name);
         // data point entries for last 6 metrics
         ArrayList<Entry> entries = new ArrayList<>();
@@ -50,20 +60,14 @@ public class Details_r2 extends AppCompatActivity {
         LineData data = new LineData(labels, dataset);
         lineChart.setData(data);
         lineChart.setDescription("Metric Tracking");
-        lineChart.animateY(3000);
-
-
-        np = (NumberPicker)findViewById(R.id.np);
-        np.setMinValue(0);
-        np.setMaxValue(100);
-        np.setWrapSelectorWheel(false);
+        lineChart.animateY(1000);
     }
 
     public void AddMetric(View v) {
         int metric = np.getValue();
         boolean saved = appData._mController.dbsrv.AddMetric(h.name, metric);
         if (saved) {
-            recreate(); //reload this page dude! - jgunter
+            GetAndShowData();
         } else {
             AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
             dlgAlert.setMessage("Failure");
