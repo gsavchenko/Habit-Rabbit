@@ -96,6 +96,25 @@ public class dbConnection extends SQLiteOpenHelper {
         return (ret > 0);
     }
 
+    public boolean UpdateHabit(c_Habit h, c_Habit newH) {
+        int recAffected = 0; //aka. failed
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            String filter = KEY_HABIT_NAME + " =  ? AND " + KEY_HABIT_DESC + " = ? AND " + KEY_HABIT_METRIC + " = ?";
+            ContentValues values = new ContentValues();
+            values.put(KEY_HABIT_NAME, newH.name);
+            values.put(KEY_HABIT_DESC, newH.desc);
+            values.put(KEY_HABIT_COLOUR, newH.colour);
+            values.put(KEY_HABIT_METRIC, newH.metric);
+            recAffected = db.update(TABLE_HABITS, values, filter, new String[]{h.name, h.desc, h.metric});
+        } catch(Exception ex) {
+            // do something with the errors here dudes. - jgunter
+        } finally {
+            db.close();
+        }
+        return (recAffected > 0);
+    }
+
     public List<c_Habit> GetAllHabits() {
         List<c_Habit> ret = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();

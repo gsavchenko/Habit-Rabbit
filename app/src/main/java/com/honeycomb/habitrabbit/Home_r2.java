@@ -64,6 +64,10 @@ public class Home_r2 extends AppCompatActivity {
                 info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
                 index = info.position;
                 DeleteHabitFromStorage(habits.get(index));
+            case R.id.Edit_Context:
+                info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+                index = info.position;
+                EditDetailsForHabit(index);
             default:
                 return super.onContextItemSelected(item);
         }
@@ -94,6 +98,12 @@ public class Home_r2 extends AppCompatActivity {
     public void ViewDetailsForHabit(int index) {
         appData.currentHabit = habits.get(index);
         Intent intent = new Intent(getApplicationContext(), Details_r2.class);
+        startActivity(intent);
+    }
+
+    public void EditDetailsForHabit(int index) {
+        appData.currentHabit = habits.get(index);
+        Intent intent = new Intent(getApplicationContext(), EditHabit_r2.class);
         startActivity(intent);
     }
 
