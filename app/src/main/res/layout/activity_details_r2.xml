@@ -27,6 +27,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="0.25"
+            android:onClick="AddNewHabit"
             android:background="#24AFB2"
             android:src="@drawable/addhabit" />
 
@@ -35,6 +36,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="0.25"
+            android:onClick="ShowSettings"
             android:background="#24AFB2"
             android:src="@drawable/settings" />
     </LinearLayout>
@@ -60,11 +62,12 @@
         android:layout_height="50dp"
         android:orientation="horizontal">
 
-        <NumberPicker
+        <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingLeft="5dp"
             android:id="@+id/np"
-            android:layout_weight="0.5"></NumberPicker>
+            android:layout_weight="0.5"></EditText>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

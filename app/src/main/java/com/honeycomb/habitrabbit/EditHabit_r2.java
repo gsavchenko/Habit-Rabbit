@@ -23,7 +23,7 @@ public class EditHabit_r2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_habit_r2);
 
-        this.appData = (MyApp)this.getApplicationContext();
+        this.appData = (MyApp) this.getApplicationContext();
         this.currentHabit = this.appData.currentHabit;
 
         this.h_name = (EditText) findViewById(R.id.txtNameE);
@@ -60,5 +60,15 @@ public class EditHabit_r2 extends AppCompatActivity {
             dlgAlert.setCancelable(false);
             dlgAlert.create().show();
         }
+    }
+
+    public void ShowSettings(View v) {
+        Intent intent = new Intent(getApplicationContext(), Settings_r2.class);
+        startActivity(intent);
+    }
+
+    public void AddNewHabit(View v) {
+        Intent intent = new Intent(getApplicationContext(), Add_r2.class);
+        startActivity(intent);
     }
 }

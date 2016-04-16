@@ -2,33 +2,94 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="10dp"
     android:orientation="horizontal" >
 
-    <ImageView
-        android:id="@+id/limg"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:padding="5dp" />
-
-    <LinearLayout android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/ltv1"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/limg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:padding="5dp" />
+
+        <LinearLayout android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medium Text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:padding="2dp"
-            android:textColor="#33CC33" />
-        <TextView
-            android:id="@+id/ltv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:layout_marginLeft="10dp"/>
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ltv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:textColor="#33CC33" />
+            <TextView
+                android:id="@+id/ltv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_marginLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1"/>
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="2"/>
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="3"/>
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="4"/>
+
+                <Button
+                    android:id="@+id/btn5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="5"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/limg2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:padding="5dp" />
+
     </LinearLayout>
+
 </LinearLayout>

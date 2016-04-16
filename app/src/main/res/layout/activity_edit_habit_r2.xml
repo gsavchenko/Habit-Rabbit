@@ -37,6 +37,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="0.25"
             android:background="#24AFB2"
+            android:onClick="ShowSettings"
             android:src="@drawable/settings" />
     </LinearLayout>
 
@@ -109,7 +110,7 @@
 
     <Button
         android:id="@+id/btnUpdateHabit"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:background="#24AFB2"

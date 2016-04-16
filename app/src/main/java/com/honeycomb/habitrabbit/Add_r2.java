@@ -54,4 +54,14 @@ public class Add_r2 extends AppCompatActivity {
             dlgAlert.create().show();
         }
     }
+
+    public void ShowSettings(View v) {
+        Intent intent = new Intent(getApplicationContext(), Settings_r2.class);
+        startActivity(intent);
+    }
+
+    public void AddNewHabit(View v) {
+        Intent intent = new Intent(getApplicationContext(), Add_r2.class);
+        startActivity(intent);
+    }
 }

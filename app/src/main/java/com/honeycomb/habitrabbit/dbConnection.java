@@ -172,7 +172,6 @@ public class dbConnection extends SQLiteOpenHelper {
         try {
             if (c != null)
                 c.moveToFirst();
-
             do {
                 Integer i = c.getInt(c.getColumnIndex(KEY_METRIC_VAL));
                 metrics.add(i);

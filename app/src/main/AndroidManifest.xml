@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".Details_r2" />
         <activity android:name=".Add_r2" />
-        <activity android:name=".EditHabit_r2"></activity>
+        <activity android:name=".EditHabit_r2" />
+        <activity android:name=".Settings_r2"></activity>
     </application>
 
 </manifest>

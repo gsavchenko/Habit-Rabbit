@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.honeycomb.habitrabbit.Settings_r2">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#24AFB2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="@android:style/TextAppearance.Holo.WindowTitle"
+            android:text="Support"
+            android:id="@+id/textView2"
+            android:layout_weight="0.15"
+            android:paddingLeft="25dp"
+            android:gravity="center_vertical"
+            android:textSize="40sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:background="#eeeeee"
+            android:weightSum="1">
+
+            <EditText
+                android:layout_margin="10dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Name"
+                android:id="@+id/txtSupportName"/>
+            <EditText
+                android:layout_margin="10dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Email Address"
+                android:id="@+id/txtSupportEmail"
+                 />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:inputType="text|textMultiLine"
+                android:layout_margin="10dp"
+                android:padding="20dp"
+                android:hint="Type Your Message..."
+                android:id="@+id/txtSupportMessage" />
+            
+            <android.support.v7.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send a copy to my email address"/>
+            
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:background="#8ECB26"
+                android:text="Send Email"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

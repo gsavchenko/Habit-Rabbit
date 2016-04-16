@@ -37,9 +37,8 @@ public class Home_r2 extends AppCompatActivity {
         habits = appData._mController.dbsrv.GetAllHabits();
 
         lsvHabits = (ListView)findViewById(R.id.lsvHabits); // grab listview object from view
-        registerForContextMenu(lsvHabits);
-
         lsvHabits.setAdapter(new CustomListAdapter(this, habits));
+        registerForContextMenu(lsvHabits);
     }
 
     @Override
@@ -72,6 +71,8 @@ public class Home_r2 extends AppCompatActivity {
                 return super.onContextItemSelected(item);
         }
     }
+
+    // Phasing Out the Context Menu here - jgunter
 
     private void DeleteHabitFromStorage(c_Habit h) {
         final c_Habit habitToDelete = h;
@@ -109,6 +110,11 @@ public class Home_r2 extends AppCompatActivity {
 
     public void AddNewHabit(View v) {
         Intent intent = new Intent(getApplicationContext(), Add_r2.class);
+        startActivity(intent);
+    }
+
+    public void ShowSettings(View v) {
+        Intent intent = new Intent(getApplicationContext(), Settings_r2.class);
         startActivity(intent);
     }
 

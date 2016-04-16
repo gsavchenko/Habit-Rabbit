@@ -35,6 +35,7 @@
             android:id="@+id/imageButton2"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:onClick="ShowSettings"
             android:layout_weight="0.25"
             android:background="#24AFB2"
             android:src="@drawable/settings" />
